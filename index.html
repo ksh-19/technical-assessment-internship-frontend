@@ -12,8 +12,123 @@
     <div class="container mt-5">
         <h1 class="text-center">Welcome to the Frontend Assessment</h1>
         <!-- TODO: Implement Task 1 here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">MySite</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
         <!-- TODO: Implement Task 2 here -->
+         
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="image/cat.jpeg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">Cat</h5>
+            <p class="card-text">This is a cat.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="image/dog.jpeg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">Dog</h5>
+            <p class="card-text">This is a dog.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="image/bird.jpeg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">Bird</h5>
+            <p class="card-text">This is a bird.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
         <!-- TODO: Implement Task 3 here -->
+        <div class="container mt-5 mb-5">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form id="contactForm">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+                <label for="nameInput">Name</label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                <label for="emailInput">Email address</label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a message here" id="messageInput" style="height: 150px"></textarea>
+                <label for="messageInput">Message</label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>         
+    </div>
+    <!-- TODO: Implement Task 4 here -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Your Submitted Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> <span id="modalName"></span></p>
+          <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+          <p><strong>Message:</strong> <span id="modalMessage"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); 
+  
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+      const message = document.getElementById("messageInput").value;
+  
+      document.getElementById("modalName").textContent = name;
+      document.getElementById("modalEmail").textContent = email;
+      document.getElementById("modalMessage").textContent = message;
+  
+      const modal = new bootstrap.Modal(document.getElementById("contactModal"));
+      modal.show();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </body>
 
